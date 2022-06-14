@@ -30,11 +30,7 @@ pipeline {
                 echo "Maven Nexus"; 
                 bat 'mvn deploy'; 
             }
-            stage ('MVN Nexus') {
-            steps {
-                echo "Maven Nexus"; 
-                bat 'mvn clean package -Dmaven.test.skip=true deploy:deploy-file -DgroupId=io.order.manager -DartifactId=food-order-manager -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-snapshots/ -Dfile=target/food-order-manager-0.0.1-SNAPSHOT.jar'; 
-            }
+           
         }
     }
 }
